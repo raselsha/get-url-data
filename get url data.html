@@ -1,0 +1,23 @@
+	<p style="text-left: center;width:200px;margin: auto;">
+		<strong id="data"></strong><br>
+		<a id="linkLiveRoom" href="?id=1&name=user-name&email=user@gmail.com" style="padding: 10px;
+			background: #793919;
+			color: #fff;
+			font-size: 19px;
+			font-weight: bold;
+			display: block;
+			text-align: center;">Get data</a>
+	</p>
+	<script>
+		var url_string = window.location.href; //window.location.href
+		var url = new URL(url_string);
+		var id= url.searchParams.get("id");
+		var name= url.searchParams.get("name");
+		var email= url.searchParams.get("email");
+		var data = document.getElementById('data');
+		data.innerHTML='';
+		if (id) {
+			data.innerHTML ="id:"+id+"<br>Name: "+ name+"<br> Email: "+email+"<br>";
+		}
+	</script>
+
